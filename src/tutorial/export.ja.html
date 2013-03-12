@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+ <!-- PageType -->
+              <li>for Mac</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+ <!-- Startup -->
+              <li><a href="startup.ja.html">インストール</a></li>
+              <li><a href="project.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display.ja.html">画面構成</a></li>
+              <li><a href="widget.ja.html">ウィジェットについて</a></li>
+              <li><a href="event.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+        <div class="text red-bg">
+          <div>
+            <h2>Use PhoneGap</h2>
+            <ul>
+              <li><a href="phonegap.ja.html">Setup</a></li>
+              <li><a href="export.ja.html">Export</a></li>
+              <li><a href="ios.ja.html">for iOS</a></li>
+              <li><a href="android.ja.html">for Android</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='phonegap'>PhoneGapを利用してネイティブアプリを作成する</h1>
+<hr />
+<p>VSDで作成したアプリケーションのソースコードをPhoneGapに対応する形式で実際に出力する方法を説明します。</p>
+
+<p><a href='./widget.ja.html'>ウィジェットについて</a>で作成したサンプルアプリをベースに使用します。 projectの作成時にPhoneGapを選択しているため、特別に難しい設定などはありません。</p>
+<h2 class='sub_title'>対象デバイスの追加と変更</h2>
+<p>ここまではiOS向けのアプリケーションを作成しましたが、AndroidまたはBlackBerry向けのアプリケーションに切り替えることも可能です。</p>
+
+<p><a href='./image/pg_config_target_ios.png'><img height='200' src='image/pg_config_target_ios.png' /></a> <a href='./image/pg_config_target_android.png'><img height='200' src='image/pg_config_target_android.png' /></a> <a href='./image/pg_config_target_blackberry.png'><img height='200' src='image/pg_config_target_blackberry.png' /></a></p>
+
+<p><em>Settings</em>をクリックし、<em>Project configuration</em>の<em>Targets</em>タブを開きます。 <em>iOS</em>, <em>Android</em>, <em>BlackBerry</em>とボタンが並んでいるので使用したいOSを選択します。 上部にデバイスイメージが表示されるため、任意のデバイスを&#8221;on（右にスライドされている状態）&#8221;にします。 その後、利用するSDKを選択し、右下の<em>OK</em>ボタンをクリックします。 それぞれの選択時のイメージ画像は上図の通りです。（上から、iOS, Android, BlackBeryy）</p>
+
+<p><a href='./image/pg_app_ios.png'><img height='300' src='image/pg_app_ios.png' /></a></p>
+
+<p><em>iPhone portrait</em>と表示されているリストをクリックすると、上記で設定したデバイスが選択出来るようになっています。</p>
+
+<p><a href='./image/pg_app_android.png'><img height='300' src='image/pg_app_android.png' /></a></p>
+
+<p>Androidを選択するとイメージがAndroid専用のイメージに自動的に変更されます。</p>
+
+<p><a href='./image/pg_app_blackberry.png'><img height='300' src='image/pg_app_blackberry.png' /></a></p>
+
+<p>BlackBerryも同様です。</p>
+<br />
+<p>OSによって、レイアウトなどに修正が必要になる場合は、必要なタイミングで変更してください。 OS毎に保存されるため、調整によって他のOSに切り替えた際にずれるといった心配は必要ありません。</p>
+<h2 class='sub_title'>ソースコードのエクスポート</h2>
+<p><em>Project configuration</em>でデバイスの追加変更が完了し、各OS（デバイス）毎のレイアウト等の修正も完了したら、さっそくソースコードをエクスポートします。 1度の作業で<em>Project configuration</em>で&#8221;on&#8221;になっているOS全てに対して出力されるため、OS毎に作業が必要なのかという心配はいりません。</p>
+<br />
+<p>まず、左上の<em>Export</em>をクリックしてください。</p>
+
+<p><a href='./image/pg_export.png'><img height='300' src='image/pg_export.png' /></a></p>
+
+<p><em>PhoneGap Application Export&#8230;</em>というウィンドウが表示されるので、任意の情報を入力してください。 <em>Application Name</em>, <em>Application Id</em>, <em>Version</em>はデフォルトで入力されているので、<em>Exort into the path</em>に、出力先のフォルダへのパスを設定することが主な作業になります。</p>
+
+<p>入力後、<em>OK</em>をクリックすると、<em>Export into the path</em>に指定したフォルダ配下に、<em>Application Name</em>で指定した名前のフォルダが生成されます。 さらにその配下に&#8221;android&#8221;, &#8220;blackberry&#8221;, &#8220;ios_iphone_3_3_3&#8221;など、<em>Project configuration</em>で&#8221;on&#8221;にしたOSに対応したフォルダが作成されている事を確認してください。</p>
+<br />
+<p>これで、PhoneGapに対応したソースコードのエクスポートが完了です。 次は、出力したソースコードをOS毎にエミュレートおよび実デバイス上で、ネイティブアプリとして動かす方法について説明します。</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+
+              <li>for Web Trial</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+
+              <li><a href="startup_web_trial.ja.html">アカウント作成</a></li>
+              <li><a href="project_web_trial.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display_web_trial.ja.html">画面構成</a></li>
+              <li><a href="widget_web_trial.ja.html">ウィジェットについて</a></li>
+              <li><a href="event_web_trial.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc_web_trial.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='data_src'>Data src.の使い方</h1>
+<hr />
+<p>ここでは<em>Data src.</em>の使い方について説明します。 <em>Data src.</em>とは、データのマネジメントを行うための、UIを持たないコンポーネントです。 いくつかの機能が提供されていますが、<tt>RSSRequester</tt>を使って、RSSリーダーを作成したいと思います。</p>
+
+<p><a href='./image/vsd_datasrc1.png'><img height='500' src='image/vsd_datasrc1.png' /></a></p>
+
+<p>まず、ウィジェットを配置します。 RSS入力用の<tt>Text field</tt>と読み込んだ項目を表示するための<tt>List</tt>の2つを配置します。</p>
+
+<p><a href='./image/vsd_datasrc2.png'><img height='500' src='image/vsd_datasrc2.png' /></a></p>
+
+<p><em>Data src.</em>の<tt>RSSRequester</tt>を<tt>Text field</tt>と<tt>List</tt>の間にドラッグ&amp;ドロップします。</p>
+
+<p><a href='./image/vsd_datasrc3.png'><img height='500' src='image/vsd_datasrc3.png' /></a></p>
+
+<p><em>App components</em>から各ウィジェット名を変更します。 <tt>Text field</tt>を&#8221;url_txt&#8221;、<tt>RSSRequester</tt>を&#8221;rss_req&#8221;、<tt>List</tt>を&#8221;rss_list&#8221;に変更しています。</p>
+
+<p><a href='./image/vsd_datasrc4.png'><img height='500' src='image/vsd_datasrc4.png' /></a></p>
+
+<p>イメージ上の&#8221;url_txt&#8221;を<em>Shift</em>キーを押下しながらクリックし、<em>App components</em>の&#8221;rss_req&#8221;の上までドラッグします。 画面のように<em>Connect url_txt to rss_req</em>と表示されたところで、クリックを放します。</p>
+
+<p><a href='./image/vsd_datasrc5.png'><img height='500' src='image/vsd_datasrc5.png' /></a></p>
+
+<p><em>Out property</em>に<em>value</em>を、<em>In property</em>に<em>url</em>を指定し、<em>OK</em>をクリックします。</p>
+
+<p><a href='./image/vsd_datasrc6.png'><img height='500' src='image/vsd_datasrc6.png' /></a></p>
+
+<p><em>App components</em>の&#8221;rss_req&#8221;を<em>Shift</em>キーを押下しながらクリックし、イメージ上の&#8221;rss_list&#8221;の上までドラッグします。 画面のように<em>Connect rss_req to rss_list</em>と表示されたところで、クリックを放します。</p>
+
+<p><a href='./image/vsd_datasrc7.png'><img height='500' src='image/vsd_datasrc7.png' /></a></p>
+
+<p><em>Out property</em>に<em>items</em>を、<em>In property</em>に<em>model</em>を指定し、<em>OK</em>をクリックします。</p>
+
+<p><a href='./image/vsd_datasrc8.png'><img height='500' src='image/vsd_datasrc8.png' /></a></p>
+
+<p>入力フォームに任意のRSSファイルのアドレスを入力すると、RSSを取得し、リストに表示されます。</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+

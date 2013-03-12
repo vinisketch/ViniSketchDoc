@@ -1,0 +1,72 @@
+
+body {
+  font-family: Univers, "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: transparent
+}
+
+div.content {
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+}
+
+div.tiles.quater {
+  width: 0px;
+  position: absolute;
+  display: none;
+}
+
+div.description.threefourth {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  left: 0px;
+}
+div.description > div {
+  width: auto;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.description img {
+  margin: 0 auto;
+}
+
+footer {
+  position: relative;
+}
+
+pre > code {
+  font-weight: bold;
+}
+
+pre {
+  margin: 1em;
+}
+
+a {
+  color: #2495b5;
+}
+
+.sub_title {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+ul.item {
+  list-style-type: disc;
+  margin: 0;
+  margin-left: 1em;
+}
+
+img {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+

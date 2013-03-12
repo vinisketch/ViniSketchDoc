@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+ <!-- PageType -->
+              <li>for Mac</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+ <!-- Startup -->
+              <li><a href="startup.ja.html">インストール</a></li>
+              <li><a href="project.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display.ja.html">画面構成</a></li>
+              <li><a href="widget.ja.html">ウィジェットについて</a></li>
+              <li><a href="event.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+        <div class="text red-bg">
+          <div>
+            <h2>Use PhoneGap</h2>
+            <ul>
+              <li><a href="phonegap.ja.html">Setup</a></li>
+              <li><a href="export.ja.html">Export</a></li>
+              <li><a href="ios.ja.html">for iOS</a></li>
+              <li><a href="android.ja.html">for Android</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='ios'>iOS向けアプリケーションの作成</h1>
+<hr /><h2 class='sub_title'> 必要なもの</h2><ul class='item'>
+<li>Intel-based Computer with Mac OS X Lion or greater(10.7.4++)</li>
+<li>Xcode 4.5以降</li>
+<li>iOS 6 SDK</li>
+<li>Xcode Command Line Tools</li>
+<li>iOS Device</li>
+</ul><h2 class='sub_title'> インストール</h2>
+<p>XcodeをApp Storeからダウンロードしてインストールします。 Xcode 4.5.2以降をダウンロードした場合、iOS 6 SDKも含まれているため、それ以前のXcodeを使用している場合のみ、別途Apple Developer Downloadより入手してください。 iOS 6 SDKを入手するためには、Apple Developerに登録する必要があります。</p>
+
+<p><a href='./image/pg_preferences_download_ios.png'><img height='300' src='image/pg_preferences_download_ios.png' /></a></p>
+
+<p>Xcodeをインストール後、Xcode Command Line Toolsをインストールする必要があります。 <em>Preferences</em> -&gt; <em>Downloads</em> -&gt; <em>Components</em>を開き、<em>Command Line Tools</em>の<em>Install</em>をクリックします。</p>
+
+<p><a href='./image/pg_preferences_ios.png'><img height='300' src='image/pg_preferences_ios.png' /></a></p>
+
+<p>また、<em>Preferences</em> -&gt; <em>Locations</em> -&gt; <em>Source Trees</em>を開き、<em>+</em>ボタンをクリックし、Cordovaライブラリへのパスを追加します。<br /> <em>Setting Name</em>と<em>DisplayName</em>に<em>VSD_CORDOVALIB</em>、<em>Path</em>にVSDが保持しているCordovaLibへのパスを設定します。</p>
+
+<p>VSDが保持しているCordovaLibへのパスは以下の通りです。 VSD.appを保存してあるフォルダまでのパスと合わせて記述してください。 <code>
+VSD.app/Contents/Resources/plugins/extensions/PhoneGap/libs/ios/CordovaLib
+</code></p>
+<h2 class='sub_title'> 読み込みと実行</h2>
+<p><a href='./image/pg_editor_ios.png'><img height='300' src='image/pg_editor_ios.png' /></a></p>
+
+<p><em>File</em> -&gt; <em>Open</em>を選択し、エクスポートしたフォルダの&#8221;XXXXX.xcodeproj&#8221;を選択して、<em>Open</em>をクリックします。</p>
+
+<p><a href='./image/pg_run_ios.png'><img height='300' src='image/pg_run_ios.png' /></a></p>
+
+<p>左上に表示される<em>Run</em>をクリックするとエミュレータが起動し、アプリケーションが実行されます。</p>
+<h2 class='sub_title'> 実デバイス上で実行する</h2>
+<p>Apple Developerに登録し、デバイスにデプロイするために必要な手続きを<a href='https://developer.apple.com/ios/manage/overview/index.action'>iOS Provisioning Portal</a>から行ってください。 詳細な手順に関しては、<a href='http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html#//apple_ref/doc/uid/TP40007959'>Tools Workflow Guide for iOS</a>を参照してください。</p>
+
+<p>正しく設定か完了すると、デバイスを選択することが出来ます（ここではiPadを登録しています）。</p>
+
+<p><a href='./image/pg_device_select_ios.png'><img height='300' src='image/pg_device_select_ios.png' /></a></p>
+
+<p>デプロイ先のデバイスを選択し、<em>Run</em>をクリックすると、デバイス上にアプリケーションがインストールされ、自動的に実行されます。</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+

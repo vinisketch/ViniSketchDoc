@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+
+              <li>for Web Trial</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+
+              <li><a href="startup_web_trial.ja.html">アカウント作成</a></li>
+              <li><a href="project_web_trial.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display_web_trial.ja.html">画面構成</a></li>
+              <li><a href="widget_web_trial.ja.html">ウィジェットについて</a></li>
+              <li><a href="event_web_trial.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc_web_trial.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='vsd'>VSD画面構成</h1>
+<hr />
+<p>VSDアプリケーション作成方法の説明の前に、VSDの開発画面構成と各機能の概要を説明します。</p>
+<!-- Application Menu -->
+<p><a href='./image/vsd_web_display1.png'><img height='300' src='image/vsd_web_display1.png' /></a> <!-- Menu --></p>
+
+<p><strong>Menu</strong></p>
+<pre>
+ <!-- -->
+<em>Close</em>
+  プロジェクトを終了し、プロジェクト選択画面に遷移します。  
+<em>Run</em>
+  作成したアプリケーションをVSDシミュレータ上で実行します。  
+<em>Settings</em>
+  プロジェクトのコンフィギュレーションの設定変更を行います。
+  対象デバイスの変更や対象デバイス情報の変更、アプリケーション情報の変更等が可能です。  
+<em>Resource Editor</em>
+  Resource Editor画面を表示します。  
+<em>GUI Editor</em>
+  GUI Ediotor画面を表示します。  
+<em>Components Editor</em>
+  Components Editor画面を表示します。  
+<em>Dataflow</em>
+  Dataflow画面を表示します。  
+ <!-- Menu -->
+</pre>
+<p><strong>Side Bar(Left)</strong></p>
+<pre>
+<em>GUI Inspector</em>、<em>Specification</em>、<em>Events</em>などのビューを提供します。
+</pre>
+<p><strong>Main Area</strong></p>
+<pre>
+デバイスイメージを提供するイメージビューです。ウィジェットの配置などを行います。
+</pre>
+<p><strong>Side Bar(Right)</strong></p>
+<pre>
+<em>Widgets &amp; Tools</em>、<em>App Components</em>などのビューを提供します。
+</pre>
+<p><strong>GUI Editor</strong></p>
+<pre>
+デバイスイメージ上でグラフィカルにウィジェットの配置や各種プロパティ・イベントなどの
+設定を行うための各種ビューを提供します。
+</pre>
+<p><a href='./image/vsd_display_inspector1.png'><img height='300' src='image/vsd_display_inspector1.png' /></a> <a href='./image/vsd_display_inspector2.png'><img height='300' src='image/vsd_display_inspector2.png' /></a> <a href='./image/vsd_display_inspector3.png'><img height='300' src='image/vsd_display_inspector3.png' /></a> <a href='./image/vsd_display_inspector4.png'><img height='300' src='image/vsd_display_inspector4.png' /></a></p>
+
+<p><strong>GUI Inspector</strong></p>
+<pre>
+対象となるウィジェットの各種設定を行うためのビューです。
+4つにカテゴリ分けされ、設定ビューをタブで切り替えることが可能です。
+</pre>
+<p><strong>Metric</strong></p>
+<pre>
+対象ウィジェットのサイズや位置など主にレイアウトに関する設定を行うことが可能です。
+</pre>
+<p><strong>Font</strong></p>
+<pre>
+対象ウィジェットのフォントやテキストレイアウトに関する設定を行うことが可能です。
+</pre>
+<p><strong>Bkgd</strong></p>
+<pre>
+対象ウィジェットの背景に関する設定を行うことが可能です。
+</pre>
+<p><strong>Border</strong></p>
+<pre>
+対象ウィジェットの枠に関する設定を行うことが可能です。
+</pre>
+<p><a href='./image/vsd_display_specification.png'><img height='300' src='image/vsd_display_specification.png' /></a></p>
+
+<p><strong>Specification</strong></p>
+<pre>
+対象ウィジェットが保持するプロパティの設定を行うためのビューです。
+プロパティ名とプロパティのアクセスタイプが表示されます。
+各プロパティを選択すると、対象プロパティの編集が可能です。
+各プロパティの詳細は、対象ウィジェットのリファレンス
+（<em>Help</em> -> <em>ViniSketch API &amp; Guidlines</em>）を参照してください。
+</pre>
+<p><a href='./image/vsd_display_events.png'><img height='300' src='image/vsd_display_events.png' /></a></p>
+
+<p><strong>Events</strong></p>
+<pre>
+対象ウィジェットに対するイベントの設定を行うためのビューです。
+イベント種別が表示されます。
+イベントが登録されている場合は、ウィジェット名とイベント発生時に呼び出される
+リスナー名が表示されます。
+1つのイベントタイプに対して、複数のイベントを登録することが可能です。
+</pre>
+<p><a href='./image/vsd_display_wt1.png'><img height='300' src='image/vsd_display_wt1.png' /></a> <a href='./image/vsd_display_wt2.png'><img height='300' src='image/vsd_display_wt2.png' /></a> <a href='./image/vsd_display_wt3.png'><img height='300' src='image/vsd_display_wt3.png' /></a></p>
+
+<p><strong>Widgets &amp; Tools</strong></p>
+<pre>
+利用可能なウィジェットを初めとするコンポーネントを提供するビューです。
+各ウィジェットはドラッグ&amp;ドロップで、イメージビューへの配置が可能です。
+各コンポーネントの詳細に関しては、VSDのHelpにある"ViniSketch API &amp; Guidlines"を
+参照してください。
+</pre>
+<p><strong>Widgets</strong></p>
+<pre>
+UIを持つ代表的なコンポーネントを提供します。
+<em>View</em>、<em>Widgets</em>、<em>Extenstions</em>にカテゴリ分けされています。
+</pre>
+<p><strong>Data src.</strong></p>
+<pre>
+データのマネジメント行うためのUIを持たないコンポーネントを提供します。
+</pre>
+<p><strong>My comp.</strong></p>
+<pre>
+???
+</pre>
+<p><a href='./image/vsd_display_appcomp.png'><img height='300' src='image/vsd_display_appcomp.png' /></a></p>
+
+<p><strong>App Components</strong></p>
+<pre>
+配置されているコンポーネントリストを表示します。
+ウィジェットの選択・可視化設定・複製や削除などの機能を提供します。
+オレンジのマークがついているコンポーネントはJavaScriptコード生成済みであり、
+独自の振る舞いを設定可能です。
+また、各コンポーネントに対して、子オブジェクトの追加やJavaScriptコードの
+生成などを行うことも可能です。
+メインビューに関しては、CSSファイルの追加と削除を行うことも可能です。
+（コンポーネント上でCtrl+クリックでメニューを開き、"Add CSS code"を
+選択する。）
+</pre>
+<p><a href='./image/vsd_display_code.png'><img height='300' src='image/vsd_display_code.png' /></a></p>
+
+<p><strong>Resource Editor</strong></p>
+<pre>
+JavaScriptソースコードの編集機能を提供します。
+<em>App Components</em>で編集可能なソースコード（オレンジのマーク有）を選択・表示する
+ことが可能です。
+</pre>
+<p><a href='./image/vsd_display_component.png'><img height='300' src='image/vsd_display_component.png' /></a></p>
+
+<p><strong>Components Editor</strong></p>
+<pre>
+配置されているコンポーネントの関連図を提供します。
+マウス操作によってコンポーネント間の接続を変更することが可能です。
+また、イベントが登録されている場合は、右側に登録済みイベントのリストが表示されます。
+</pre>
+<p><a href='./image/vsd_display_dataflow.png'><img height='300' src='image/vsd_display_dataflow.png' /></a></p>
+
+<p><strong>Dataflow</strong></p>
+<pre>
+配置されているウィジェットのデータフローを提供します。
+ウィジェットが保持しているプロパティの一覧や、ウィジェット間でプロパティのコネクションが
+設定されている場合は、状態の確認・変更・削除などを行うことが可能です。
+* プロパティのコネクションの編集はデータフロービューからのみ変更が可能です。
+</pre>
+<p><a href='./image/vsd_display_fileview.png'><img height='300' src='image/vsd_display_fileview.png' /></a></p>
+
+<p><strong>FileView</strong></p>
+<pre>
+編集可能なソースファイルの一覧を表示します。
+<em>Resource Editor</em>および<em>GUI Editor</em>の下部に表示されます。
+</pre>
+<p><a href='./image/vsd_display_debug.png'><img height='300' src='image/vsd_display_debug.png' /></a></p>
+
+<p><strong>DebugLogView</strong></p>
+<pre>
+デバッグ用のコンソールログを表示します。
+右上のボタンで表示中のログをクリアすることが可能です。
+また、<em>Resource Editor</em>ではエラー・ワーニングログ専用のビューが提供されています。
+</pre>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+

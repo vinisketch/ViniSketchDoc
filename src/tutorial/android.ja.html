@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+ <!-- PageType -->
+              <li>for Mac</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+ <!-- Startup -->
+              <li><a href="startup.ja.html">インストール</a></li>
+              <li><a href="project.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display.ja.html">画面構成</a></li>
+              <li><a href="widget.ja.html">ウィジェットについて</a></li>
+              <li><a href="event.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+        <div class="text red-bg">
+          <div>
+            <h2>Use PhoneGap</h2>
+            <ul>
+              <li><a href="phonegap.ja.html">Setup</a></li>
+              <li><a href="export.ja.html">Export</a></li>
+              <li><a href="ios.ja.html">for iOS</a></li>
+              <li><a href="android.ja.html">for Android</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='android'>Android向けアプリケーションの作成</h1>
+<hr /><h2 class='sub_title'> 必要なもの</h2><ul class='item'>
+<li>Android SDK</li>
+<li>Eclipse Classic</li>
+<li>ADT Plugin</li>
+<li>Android Device</li>
+</ul><h2 class='sub_title'> インストール</h2>
+<p>ここでは、Mac OS上にインストール方法を記述します。 Windowsを使用する場合の設定方法は<a href='http://docs.phonegap.com/en/2.3.0/guide_getting-started_android_index.md.html#Getting%20Started%20with%20Android'>PhoneGap Official Site</a>を参照してください。</p>
+
+<p><a href='http://developer.android.com/sdk/index.html'>Android SDK</a>をダウンロードします。 最新(2013/02現在)のSDKにはADTプラグインが組み込まれたEclipseが内包されているため、SDKのダウンロードだけで十分です。 adt-bundle-xxx.zipを任意の場所に展開します。</p>
+
+<p>ターミナルから以下の通り実行し、.bash_profileにSDKまでのパスを記述します。 <code>/Development/adt-bundle-xxx/sdk</code></p>
+
+<p>さらに、SDK配下にあるplatform-toolsとtoolsへのパスを通します。 <code>export PATH=${PATH}:/Development/adt-bundle-xxx/sdk/platform-tools:/Develpment/adt-bundle-xxx/sdk/tools</code></p>
+
+<p>.bash_profileに記述したパスを読み込んだら、環境設定は終了です。 <code>source ~/.bash_profile</code></p>
+
+<p><a href='./image/pg_install_intel.png'><img height='300' src='image/pg_install_intel.png' /></a></p>
+
+<p>adt-bundle-xxx/eclipse/Eclipseをダブルクリックして起動します。 workspaceを任意のフォルダに設定してください。 &#8220;Welcome!&#8221;ページを閉じ、<em>Window</em>メニューから<em>Android SDK Manager</em>を選択します。 <em>Android 4.0.3(API 15)</em>の<em>SDK Platform</em>, <em>Intel x86 Atom System Image</em>と<em>Extras</em>の<em>Intel x86 Emulator Accelerator(HAXM)</em>をインストールしてください。</p>
+
+<p><a href='./image/pg_emu_new.png'><img height='300' src='image/pg_emu_new.png' /></a></p>
+
+<p>同じ<em>Window</em>メニューから<em>Android Virtual Device Manager</em>を選択します。 <em>New</em>ボタンをクリックし、<em>Create new Android Virtual Device(AVD)</em>を表示します。</p>
+
+<p><a href='./image/pg_emu_newinfo.png'><img height='300' src='image/pg_emu_newinfo.png' /></a></p>
+
+<p><em>AVD Name</em>, <em>Device</em>, <em>Target</em>, <em>CPU/ABI</em>を設定し、<em>OK</em>ボタンをクリックします。 <em>Android Virtual Device Manager</em>に設定したエミュレータがリストアップされていることを確認してください。</p>
+<h2 class='sub_title'> 読み込みと実行</h2>
+<p><a href='./image/pg_new_project_android.png'><img height='300' src='image/pg_new_project_android.png' /></a></p>
+
+<p><em>File</em> -&gt; <em>New</em> -&gt; <em>Project&#8230;</em>を選択し、<em>New Project</em>で<em>Android</em>の<em>Android Project from Existing Code</em>を選択したら、<em>Next</em>をクリックします。</p>
+
+<p><a href='./image/pg_import_project_android.png'><img height='300' src='image/pg_import_project_android.png' /></a></p>
+
+<p><em>Browse&#8230;</em>ボタンクリックし、エクスポートしたandroidフォルダを指定し、<em>Finish</em>をクリックします。</p>
+
+<p><a href='./image/pg_eclipse_main_android.png'><img height='300' src='image/pg_eclipse_main_android.png' /></a></p>
+
+<p>エクスポートしたAndroid用のソースコードがeclipseに新規プロジェクトとして読み込まれます。</p>
+
+<p><a href='./image/pg_eclipse_buildpath_android.png'><img height='300' src='image/pg_eclipse_buildpath_android.png' /></a></p>
+
+<p>CordovaLibを参照するために、&#8221;cordova.jar&#8221;を参照する様に設定します。 libs/cordova.jarの上で、<em>Control</em>キーを押下しながらクリックし、メニューから<em>Build Path</em> -&gt; <em>Add to Build Path</em>を選択します。</p>
+
+<p><a href='./image/pg_eclipse_main_buildpath_android.png'><img height='300' src='image/pg_eclipse_main_buildpath_android.png' /></a></p>
+
+<p><em>Referenced Libraries</em>に&#8221;cordova.jar&#8221;が追加されていることを確認します。</p>
+
+<p><a href='./image/pg_eclipse_run_android.png'><img height='300' src='image/pg_eclipse_run_android.png' /></a></p>
+
+<p><em>Control</em>キーを押下しながらクリックし、メニューから<em>Run As</em> -&gt; <em>Android Application</em>を 選択します。</p>
+
+<p><a href='./image/pg_run_android.png'><img height='300' src='image/pg_run_android.png' /></a></p>
+
+<p>エミュレータが起動し、アプリケーションが実行されます。</p>
+<h2 class='sub_title'> 実デバイス上で実行する</h2>
+<p>実際のデバイス上でアプリケーションの動作確認をします。</p>
+
+<p>まず、Androidデバイス上で、<em>USB debugging</em>を有効にし、AndroidデバイスとPCをUSBケーブルで接続します。</p>
+
+<p><a href='./image/pg_ddms_devices.png'><img height='300' src='image/pg_ddms_devices.png' /></a></p>
+
+<p><em>DDMS</em>に切り替え、<em>Devices</em>で接続したAndroidデバイスが認識されていることを確認します。</p>
+
+<p>エミュレータでの実行と同様に、<em>Run</em> -&gt; <em>Android Application</em>を選択すると、Androidデバイス上にアプリケーションがインストールされ、実行します。</p>
+
+<p>デバイスが認識されない場合は<a href='http://developer.android.com/tools/device.html'>Android Developer Site</a>を参照してください。</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+

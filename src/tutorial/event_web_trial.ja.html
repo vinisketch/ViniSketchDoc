@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+
+              <li>for Web Trial</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+
+              <li><a href="startup_web_trial.ja.html">アカウント作成</a></li>
+              <li><a href="project_web_trial.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display_web_trial.ja.html">画面構成</a></li>
+              <li><a href="widget_web_trial.ja.html">ウィジェットについて</a></li>
+              <li><a href="event_web_trial.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc_web_trial.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='id3446'>イベントの取得と処理の設定</h1>
+<hr />
+<p>ここではウィジェット間でのイベントの取得と設定方法について説明します。</p>
+<h2 class='sub_title'>UIの配置</h2>
+<p>まず、新規にプロジェクトを作成します。 プロジェクト情報は任意の情報を入力して下さい。 また、対象デバイスは前回同様iPhoneを選択しています。</p>
+
+<p><a href='./image/vsd_event1_1.png'><img height='300' src='image/vsd_event1_1.png' /></a></p>
+
+<p>イベントの設定方法の説明をするためのサンプルとして、<tt>Button</tt>を2個と<tt>GMap</tt>を任意の場所に配置します。</p>
+
+<p><a href='./image/vsd_event1_2.png'><img height='300' src='image/vsd_event1_2.png' /></a></p>
+
+<p>右下にある<em>App Components</em>で各ウィジェット名をダブルクリックすると変更出来ます。 後ほど、ソースコードの記述もありますので、分かり易い名前に変更しておきます。</p>
+
+<p><a href='./image/vsd_event1_3.png'><img height='300' src='image/vsd_event1_3.png' /></a></p>
+
+<p>ここでは、&#8221;show_btn&#8221;、&#8221;hide_btn&#8221;、&#8221;gmap&#8221;にそれぞれ変更しています。</p>
+
+<p><a href='./image/vsd_event1_4.png'><img height='300' src='image/vsd_event1_4.png' /></a></p>
+
+<p>次に<tt>Button</tt>に表示されるテキストラベルを変更します。 変更したい<tt>Button</tt>ウィジェットをクリックして選択します。 <em>Specification</em>の<em>text</em>を選び、&#8221;Button&#8221;を&#8221;SHOW&#8221;と&#8221;HIDE&#8221;にそれぞれ変更してください。</p>
+
+<p><a href='./image/vsd_event1_5.png'><img height='300' src='image/vsd_event1_5.png' /></a></p>
+
+<p>変更後<em>OK</em>ボタンをクリックするとイメージに反映されます。 これでウィジェットの配置は完了です。</p>
+<br />
+<p>これからボタンの動作を設定していきますが、ここで設定する動作としては以下の2つになります。 <ul class='item'>
+<li>"SHOW"ボタンを押下された場合、地図を表示する</li>
+<li>"HIDE"ボタンを押下された場合、地図を非表示にする</li>
+</ul></p>
+<br />
+<p>イベントの取得と設定については、アプローチとして4パターンありますので、それぞれ順番に説明して行きます。 アプリケーションを作成する際は、必要に応じて組み合わせて利用してください。</p>
+<ul class='item'>
+<li>その1：GUI Editorからすべて設定する</li>
+<li>その2：listener 関数を記述する</li>
+<li>その3：ウィジェットへのbindから記述する</li>
+<li>その4：独自のイベント listenerを作成する</li>
+</ul><h2 class='sub_title'>イベントの設定 その1</h2>
+<p><em>GUI Editor</em>からすべて設定する場合の手順です。 ここではソースコードの記述は行いません。 （アプリケーションを作成する場合、必要に応じて、JavaScriptコードの記述が必要になる場合があります。）</p>
+
+<p><a href='./image/vsd_event1_6_0.png'><img height='300' src='image/vsd_event1_6_0.png' /></a></p>
+
+<p>まず、&#8221;SHOW&#8221;ボタンを選択します。</p>
+
+<p><a href='./image/vsd_event1_6_1.png'><img height='300' src='image/vsd_event1_6_1.png' /></a></p>
+
+<p>左下にある<em>Events</em>の<em>select</em>を<em>Shift</em>キーを押しながらクリックし、そのまま<tt>GMap</tt>ウィジェットまでドラッグします。</p>
+
+<p><a href='./image/vsd_event1_7.png'><img height='300' src='image/vsd_event1_7.png' /></a></p>
+
+<p>クリックを放すと、自動的にソースコードを作成するかを確認画面が表示されるので<em>Create</em>ボタンを選択します。</p>
+
+<p><a href='./image/vsd_event1_8.png'><img height='300' src='image/vsd_event1_8.png' /></a></p>
+
+<p>すると対象のウィジェット（&#8221;gmap&#8221;）とlistener 関数（&#8221;notify&#8221;）が表示されます。 listener 関数名をダブルクリックすると利用可能な一覧が表示されるので、<em>show</em>を選択してください。</p>
+
+<p><a href='./image/vsd_event1_9.png'><img height='300' src='image/vsd_event1_9.png' /></a></p>
+
+<p>画面の通りに<em>select</em>の下に&#8221;gmap&#8221;と&#8221;show&#8221;が表示されます。 また、右上の<em>×</em>ボタンを押す事で、追加した設定を削除することが出来ます。</p>
+
+<p><a href='./image/vsd_event1_10.png'><img height='300' src='image/vsd_event1_10.png' /></a></p>
+
+<p>同様に&#8221;HIDE&#8221;ボタンも設定します。 選択する関数は&#8221;hide&#8221;にしてください。 これで完了です。</p>
+
+<p><a href='./image/vsd_event1_run.png'><img height='300' src='image/vsd_event1_run.png' /></a></p>
+
+<p><em>Run</em>から実行し、シミュレータ上で動作を確認します。</p>
+
+<p><a href='./image/vsd_event1_run_hide.png'><img height='300' src='image/vsd_event1_run_hide.png' /></a></p>
+
+<p>&#8220;HIDE&#8221;ボタンをクリックすると地図が消え、</p>
+
+<p><a href='./image/vsd_event1_run_show.png'><img height='300' src='image/vsd_event1_run_show.png' /></a></p>
+
+<p>&#8220;SHOW&#8221;ボタンをクリックすると地図が表示されることが確認出来たかと思います。</p>
+<h2 class='sub_title'>イベントの設定 その2</h2>
+<p>次に、listener 関数をJavaScriptを使って記述する方法について説明します。</p>
+
+<p><a href='./image/vsd_event2_1.png'><img height='300' src='image/vsd_event2_1.png' /></a></p>
+
+<p>コードの記述を行う前に、1つウィジェットを追加してください。 <tt>Text label</tt>を配置し、ウィジェット情報を適切に変更してください。</p>
+
+<p><a href='./image/vsd_event2_2.png'><img height='300' src='image/vsd_event2_2.png' /></a></p>
+
+<p>&#8220;SHOW&#8221;ボタンを選択し、アプリケーションのメインビュー（&#8221;event_sample&#8221;）に対してイベント設定の追加を行います。 ここでは&#8221;event_sample&#8221;と&#8221;notify&#8221;が<strong>イベントの設定 その1</strong>で追加したイベントの横に追加表示されます。 &#8220;HIDE&#8221;ボタンも同様に設定してください。</p>
+
+<p><a href='./image/vsd_event2_3.png'><img height='300' src='image/vsd_event2_3.png' /></a></p>
+
+<p>イベントが正しく追加されたことを確認したら、右上の<em>Resource Editor</em>ボタンで、開発画面を切り替えてください。</p>
+
+<p><a href='./image/vsd_event2_4.png'><img height='300' src='image/vsd_event2_4.png' /></a></p>
+
+<p>メインソースコード（event_sample.js）が表示されます。 もし、何もソースコードが表示されていない場合は、<em>App Components</em>から表示することが可能です。</p>
+
+<p><a href='./image/vsd_event2_5.png'><img height='300' src='image/vsd_event2_5.png' /></a></p>
+
+<p>&#8220;notify&#8221; 関数に処理を追加します。</p>
+
+<p>サンプルコードは以下の通りです。 追加した<tt>Text label</tt>の<em>text</em>の内容を選択されたボタンに応じて変更するというものです。 <pre>
+  notify : function (event)
+  {
+<code>
+    if (event.src === this.show_btn) {
+      this.status_lbl.text = "Show";
+    }
+    if (event.src === this.hide_btn) {
+      this.status_lbl.text = "Hide";
+    }
+</code>
+  }
+</pre></p>
+
+<p><a href='./image/vsd_event2_run.png'><img height='300' src='image/vsd_event2_run.png' /></a> <a href='./image/vsd_event2_run_hide.png'><img height='300' src='image/vsd_event2_run_hide.png' /></a></p>
+
+<p>実行し、動作を確認してください。</p>
+<h2 class='sub_title'>イベントの設定 その3</h2>
+<p>ウィジェットに対するbindの設定からソースコード上で行う方法です。</p>
+
+<p><a href='./image/vsd_event3_1.png'><img height='300' src='image/vsd_event3_1.png' /></a></p>
+
+<p><strong>イベントの設定 その2</strong>で追加した設定（event_sample/notify）を、</p>
+
+<p><a href='./image/vsd_event3_2.png'><img height='300' src='image/vsd_event3_2.png' /></a></p>
+
+<p><em>×</em>ボタンを押して、削除してください。 &#8220;SHOW&#8221;ボタンと&#8221;HIDE&#8221;ボタンの両方に対して行います。</p>
+
+<p><a href='./image/vsd_event3_3.png'><img height='300' src='image/vsd_event3_3.png' /></a></p>
+
+<p>ソースコードを追加します。</p>
+
+<p>各ボタンのbindを行う処理を&#8221;applicationStarted&#8221;の最後に追加しています。</p>
+<pre>
+  applicationStarted : function (event)
+  {
+    this.mainViewVisibility (true);
+    this.loadingStop ();
+<code>
+    this.show_btn.bind('select', this);
+    this.hide_btn.bind('select', this);
+</code>
+  },
+
+  notify : function (event)
+  {
+    if (event.src === this.show_btn) {
+      this.status_lbl.text = "Show";
+    }
+    if (event.src === this.hide_btn) {
+      this.status_lbl.text = "Hide";
+    }
+  }
+</pre><h2 class='sub_title'>イベントの設定 その4</h2>
+<p><strong>イベントの設定 その3</strong>までは&#8221;notify&#8221;にイベント発生時の処理を記述していましたが、ここでは独自のlistenerを定義します。</p>
+
+<p><a href='./image/vsd_event4_1.png'><img height='300' src='image/vsd_event4_1.png' /></a></p>
+
+<p>独自に&#8221;showListener&#8221;と&#8221;hideListener&#8221;を定義します。 処理の内容は&#8221;notify&#8221;で記述していた内容と同じですが、各listenerの中で条件判定をする必要がないので、<tt>Text label</tt>に設定をする処理のみ記述します。</p>
+
+<p>また、<strong>イベントの設定 その3</strong>で追加したbind処理にどのlistenerを呼び出すかを追加します。</p>
+<pre>
+  applicationStarted : function (event)
+  {
+    this.mainViewVisibility (true);
+    this.loadingStop ();
+<code>
+    this.show_btn.bind('select', this, this.showListener);
+    this.hide_btn.bind('select', this, this.hideListener);
+</code>
+  },
+
+  notify : function (event)
+  {
+  },
+
+<code>
+  showListener : function (event)
+  {
+    this.status_lbl.text = "Show";
+  },
+
+  hideListener : function (event)
+  {
+    this.status_lbl.text = "Hide";
+  }
+</code>
+</pre>
+<p><strong>イベントの設定 その2</strong>から<strong>イベントの設定 その4</strong>はすべて同じ振る舞いをします。 <tt>Text label</tt>が正しく変更されることを確認してみてください。</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+

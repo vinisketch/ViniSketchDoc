@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VSD チュートリアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="tutorial.css">
+    
+  </head>
+  <body>
+    <div class="under-dev"><div class="icon-wrench">&nbsp;&nbsp;Under Development</div></div>
+    <a href="#" id="to_top">
+      <div class="icon-arrow-up to_top_icon"></div>
+    </a>
+    <div class="content">
+      <div class="tiles quater">
+
+        <div class="text sky-bg">
+          <div>
+            <a href="tutorial.ja.html"><h2>ViniSketch Designer Tutorial</h2></a>
+            <ul>
+ <!-- PageType -->
+              <li>for Mac</li>
+ <!-- PageType -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text mikan-bg">
+          <div>
+            <h2>Lineup</h2>
+            <ul>
+              <li><a href="introduction.ja.html">Mac版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Windows版</a></li>
+              <li><a href="in_preparation_tutorial.ja.html">Web版</a></li>
+              <li><a href="introduction_web_trial.ja.html">Web Trial版</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- Index -->
+        <div class="text pink-bg">
+          <div>
+            <h2>Start-up</h2>
+            <ul>
+ <!-- Startup -->
+              <li><a href="startup.ja.html">インストール</a></li>
+              <li><a href="project.ja.html">プロジェクト作成</a></li>
+ <!-- Startup -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="text green-bg">
+          <div>
+            <h2>Basic VSD</h2>
+            <ul>
+
+              <li><a href="display.ja.html">画面構成</a></li>
+              <li><a href="widget.ja.html">ウィジェットについて</a></li>
+              <li><a href="event.ja.html">イベントの使い方</a></li>
+              <li><a href="datasrc.ja.html">Data src.の使い方</a></li>
+
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+        <div class="text red-bg">
+          <div>
+            <h2>Use PhoneGap</h2>
+            <ul>
+              <li><a href="phonegap.ja.html">Setup</a></li>
+              <li><a href="export.ja.html">Export</a></li>
+              <li><a href="ios.ja.html">for iOS</a></li>
+              <li><a href="android.ja.html">for Android</a></li>
+            </ul>
+          </div>
+        </div>
+ <!-- PhoneGap -->
+ <!-- Index -->
+        <div class="text gray-bg">
+          <div>
+            <p>Copyright © 2011, 2012, <a href="http://www.igel.co.jp">IGEL Co., Ltd.</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="description threefourth">
+        <div>
+          <h1 id='id3447'>ウィジェットについて</h1>
+<hr />
+<p>ここではウィジェットとウィジェットが持つプロパティの設定について説明します。 また、ウィジェット間でのプロパティの設定についても説明します。</p>
+<h2 class='sub_title'>ウィジェットの配置とアプリケーションの実行</h2>
+<p>まず、<tt>TextLabel</tt>を使って、&#8221;Hello World !&#8221;を表示させてみたいと思います。</p>
+
+<p><a href='./image/vsd_text1.png'><img height='300' src='image/vsd_text1.png' /></a></p>
+
+<p><em>GUI Editor</em>の右側の<em>Widgets &amp; Tools</em>の<em>Widgets</em>を選択してください。 ここではたくさんのウィジェットが提供されています。 ウィジェットはいくつかのカテゴリ（<em>Views</em>、<em>Widgets</em>、<em>Extensions</em>）に分類されます。</p>
+
+<p>今回使用する<tt>TextLabel</tt>は<em>Widgets</em>の中にあります。 <tt>TextLabel</tt>の上にマウスカーソルを移動し、そこから真ん中のデバイスイメージの上にドラッグ&amp;ドロップしてください。</p>
+
+<p><a href='./image/vsd_text2.png'><img height='300' src='image/vsd_text2.png' /></a></p>
+
+<p>&#8220;text&#8221;と表示された<tt>TextLabel</tt>が配置されます。 黄色い丸と点線で囲われているウィジェットが、現在選択されているウィジェットです。 黄色い丸をつかんで移動することにより、ウィジェットのサイズを変更することが出来ます。 また、左側の<em>GUI Inspector</em>の<em>Metric</em>タブの中に<em>Size &amp; Position</em>という設定項目があり、そこから選択中のウィジェットのサイズと位置を指定することも可能です。</p>
+
+<p>ウィジェットの詳細やそれぞれのAPIやプロパティに関しては、<em>Help</em>の<em>ViniSketch API &amp; Guidelines</em>を参照してください。</p>
+
+<p><a href='./image/vsd_text3.png'><img height='300' src='image/vsd_text3.png' /></a></p>
+
+<p><em>GUI Inspector</em>の<em>Font</em>タブから選択中のウィジェットに対してフォントやテキストに関する設定を行うことができます。 ここでは、<em>Size</em>を&#8221;40px&#8221;に、<em>Alignment</em>を&#8221;center（左から2番目のボタン）&#8221;に設定しています。</p>
+
+<p><a href='./image/vsd_text4.png'><img height='300' src='image/vsd_text4.png' /></a></p>
+
+<p>また、<em>GUI Inspector</em>の下の<em>Specification</em>からはウィジェットが持つ各種プロパティの設定が可能です。 <em>Properties</em>の<em>text</em>をクリックすると編集画面が表示されるので、&#8221;Hello World !&#8221;を入力します。 <em>Properties</em>の入力フォーマットはJSON形式に従う必要があります。 JSONに関する詳細は<a href='http://www.json.org/json-ja.html'>json.org</a>を参照してください。</p>
+
+<p><a href='./image/vsd_text5.png'><img height='300' src='image/vsd_text5.png' /></a></p>
+
+<p>プロパティ入力後、<em>OK</em>をクリックすると設定した内容がイメージに反映されます。</p>
+
+<p><a href='./image/vsd_text6.png'><img height='300' src='image/vsd_text6.png' /></a></p>
+
+<p>VSDの一番左上にある<em>Run</em>をクリックして、作成したアプリケーションをVSDエミュレータ上で実行します。</p>
+<h2 class='sub_title'>ウィジェット間でのプロパティの設定</h2>
+<p>次にウィジェット間でのプロパティの設定について説明します。</p>
+
+<p><a href='./image/vsd_slider1.png'><img height='300' src='image/vsd_slider1.png' /></a></p>
+
+<p>次に、<tt>TextLabel</tt>を配置したのと同様に、今度は<tt>Horizontal</tt>（スライダー）を配置します。 <tt>Horizontal</tt>は指定した最小値と最大値の範囲から値を選択するためのコントロールです。 今回は<tt>Horizontal</tt>自体のプロパティは特に変更しないため、最小値は&#8221;0&#8221;、最大値は&#8221;100&#8221;、default valueは&#8221;0&#8221;です。</p>
+
+<p><a href='./image/vsd_slider0.png'><img height='300' src='image/vsd_slider0.png' /></a></p>
+
+<p>配置後、<tt>Horizontal</tt>が選択されている状態でマウスカーソルを<tt>Horizontal</tt>の上に移動します。 そこで、<em>Shift</em>キーを押下しながらクリックします。 そのままの状態で、<tt>TextLabel</tt>の上までドラッグします。 <em>Connect horizontalSlider1 to textlabel1</em>と表示された時点で離します。</p>
+
+<p><a href='./image/vsd_slider2.png'><img height='300' src='image/vsd_slider2.png' /></a></p>
+
+<p>すると、<em>Out property</em>と<em>In property</em>の選択画面が表示されます。 <em>Out property</em>は接続元のウィジェットが提供するプロパティで、<em>In property</em>は接続先のウィジェットが受け取るプロパティになります。 今回の例では、接続元は<tt>Horizontal</tt>であり、接続先は<tt>TextLabel</tt>です。</p>
+
+<p><a href='./image/vsd_slider3.png'><img height='300' src='image/vsd_slider3.png' /></a></p>
+
+<p>それぞれのウィジェットが持つプロパティのどれをどのプロパティに関連づけるかを選択します。 今回の場合は、<em>Out property</em>は<tt>Horizontal</tt>の<em>value</em>プロパティで、<em>In property</em>は<tt>TextLabel</tt>の<em>rotation</em>プロパティを選択します。 これによって、<tt>Horizontal</tt>の持つ<em>value</em>プロパティの値が<tt>TextLabel</tt>の持つ<em>rotation</em>プロパティに反映される様になります。</p>
+
+<p><a href='./image/vsd_slider4.png'><img height='300' src='image/vsd_slider4.png' /></a></p>
+
+<p>設定完了後、<tt>TextLabel</tt>を配置した時と同様に<em>Run</em>をクリックして実行します。 &#8220;Hello World !&#8221;の下に、追加した<tt>Horizontal</tt>が置かれているのが確認出来ます。 default valueは設定していないため、&#8221;0&#8221;になっています。</p>
+
+<p><a href='./image/vsd_slider5.png'><img height='300' src='image/vsd_slider5.png' /></a></p>
+
+<p>スライダーを動かしてみましょう。 <tt>TextLabel</tt>の<em>rotation</em>プロパティの値が変更されるため、&#8221;Hello World !&#8221;が回転します。</p>
+<h2 class='sub_title'>プロパティ間のコネクションの変更</h2>
+<p>追加したコネクションを削除または変更したい場合は、右上の<em>Dataflow</em>ボタンで画面を切り替えて、<em>Dataflow</em>ビューから行います。</p>
+
+<p>各ボックスのタイトル部分にウィジェット名が表示されます。 また、下のエリアにはそのウィジェットが保持するプロパティがリストアップされます。 左側に並ぶのは<em>In property</em>になり、右側に並ぶのが<em>Out property</em>です。</p>
+
+<p><a href='./image/vsd_dataflow.png'><img height='300' src='image/vsd_dataflow.png' /></a></p>
+
+<p>削除する場合は、コネクタの上で<em>Control</em>キーを押下しながらクリックすることによって、メニューが表示されるので、<em>Deconnect</em>を選択します。</p>
+
+<p><a href='./image/vsd_dataflow2.png'><img height='300' src='image/vsd_dataflow2.png' /></a> <a href='./image/vsd_dataflow3.png'><img height='300' src='image/vsd_dataflow3.png' /></a></p>
+
+<p>コネクションを追加する場合は、接続元となるウィジェットの<em>Out property</em>から接続先となるウィジェットの<em>In property</em>に対して、ドラッグするだけです。 変更したい場合は、一度設定済みのコネクションを削除してから、追加を行ってください。</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+
