@@ -44,6 +44,7 @@ ECHO = echo
 ECHO_N = echo -n
 JAVA = java
 ASCIIDOC = /usr/local/bin/asciidoc -f conf/layout.conf
+ASCIIDOC_BIS = /usr/local/bin/asciidoc -f conf/layoutBis.conf
 COMPILE = $(JAVA) -jar lib/closurecompiler/compiler.jar --language_in=ECMASCRIPT5
 COMPILE_ADV = $(JAVA) -jar lib/closurecompiler/compiler.jar --language_in=ECMASCRIPT5 --compilation_level ADVANCED_OPTIMIZATIONS
 COMPILE_YUI = $(JAVA) -cp lib/yuicompressor/jargs-1.0.jar:lib/yuicompressor/rhino-1.6R7.jar -jar lib/yuicompressor/yuicompressor-2.4.2.jar
@@ -81,7 +82,7 @@ DATA_MEMORY= "<p>La mémoire peut être un facteur rapidement limitant de votre 
 
 DATA_MULTI_TARGET= "<p>XXX…</p>"
 
-main_docs:
+main_docs: userguide
 	$(CP) src/assets/*.css out/
 	$(CP) src/assets/*.js out/
 	$(CP) src/assets/*.png out/
@@ -140,3 +141,27 @@ main_docs:
 	$(ECHO) "<a href=\"guidelines/multitarget/multitarget.html\">Gestion du multicible</a>" >> out/main.html
 	$(ECHO) $(DATA_MULTI_TARGET) >> out/main.html
 	$(CAT) ${HTML_FOOTER} >> out/main.html
+
+userguide:
+	$(MKPATH) out/userguide_ja
+	$(CP) src/userguide_ja/tree.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch1.ja.asc
+	$(MV) src/userguide_ja/ug_ch1.ja.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch2.ja.asc
+	$(MV) src/userguide_ja/ug_ch2.ja.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch3.ja.asc
+	$(MV) src/userguide_ja/ug_ch3.ja.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch4.ja.asc
+	$(MV) src/userguide_ja/ug_ch4.ja.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch5_1.ja.asc
+	$(MV) src/userguide_ja/ug_ch5_1.ja.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch5_2.ja.asc
+	$(MV) src/userguide_ja/ug_ch5_2.ja.html out/userguide_ja
+	$(ASCIIDOC_BIS) src/userguide_ja/ug_ch5_3.ja.asc
+	$(MV) src/userguide_ja/ug_ch5_3.ja.html out/userguide_ja
+	$(RSYNC) src/userguide_ja/images out/userguide_ja
+	$(MKPATH) out/userguide_ja/phonegap
+	$(ASCIIDOC) src/userguide_ja/phonegap/exp_android.ja.asc
+	$(MV) src/userguide_ja/phonegap/exp_android.ja.html out/userguide_ja/phonegap
+	$(ASCIIDOC) src/userguide_ja/phonegap/exp_ios.ja.asc
+	$(MV) src/userguide_ja/phonegap/exp_ios.ja.html out/userguide_ja/phonegap
