@@ -18,11 +18,11 @@ function instrumentTree (node)
   }
 }
 
-
 function initLinks ()
 {
   console.log ('initLinks');
   loadData ("API Reference [en]", "API_b2/tree.html");
+  loadData ("User Guide [jp]", "userguide_ja/tree.html");
   loadData ("Tutorials [jp]", "tutorial/tree.html");
   loadData ("Guidelines [fr/en]", "guidelines/tree.html");
 //  loadData ("VSD Native plugins", "plugins/ext_tree.html");
